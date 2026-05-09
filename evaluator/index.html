@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluator - Test Penitenciar RP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Pagina evaluatorului</p>
+      <h1>Corectare Test Penitenciar</h1>
+      <p class="subtitle">
+        Încarcă linkul/codul primit de la candidat. Grila se corectează automat aici, iar situațiile și regulamentul se punctează manual după barem.
+      </p>
+      <p class="warning">
+        Recomandare: nu publica pagina evaluatorului în același loc unde trimiți candidații, dacă vrei ca baremul să rămână complet privat.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card no-print">
+      <h2>Încarcă răspunsurile candidatului</h2>
+      <p class="note">Dacă ai deschis linkul primit de la candidat, răspunsurile se încarcă automat. Dacă nu, lipește codul de rezervă aici.</p>
+      <label>Cod de rezervă / payload
+        <textarea id="payloadInput" placeholder="Lipește aici codul primit de la candidat..."></textarea>
+      </label>
+      <div class="actions">
+        <button class="primary" id="loadBtn">Încarcă răspunsurile</button>
+        <button id="printBtn">Printează corectarea</button>
+      </div>
+      <p id="loadStatus" class="status"></p>
+    </section>
+
+    <section id="candidateInfo" class="card hidden">
+      <h2>Date candidat</h2>
+      <div class="score-grid">
+        <div class="score-box"><small>Nume</small><strong id="infoName">-</strong></div>
+        <div class="score-box"><small>Discord</small><strong id="infoDiscord">-</strong></div>
+        <div class="score-box"><small>Trimis la</small><strong id="infoDate">-</strong></div>
+        <div class="score-box"><small>Scor final</small><strong id="finalScore">0 / 100</strong></div>
+      </div>
+    </section>
+
+    <section id="quizSection" class="card hidden">
+      <div class="section-head">
+        <div><p class="eyebrow">SUB II</p><h2>Grilă corectată automat</h2></div>
+        <span class="points">30P</span>
+      </div>
+      <div class="score-box" style="margin-top:14px;max-width:260px">
+        <small>Scor grilă</small>
+        <strong id="quizScore">0 / 30</strong>
+      </div>
+      <div id="quizResults"></div>
+    </section>
+
+    <section id="situationsSection" class="card hidden">
+      <div class="section-head">
+        <div><p class="eyebrow">SUB I</p><h2>Situații practice</h2></div>
+        <span class="points">35P</span>
+      </div>
+      <div id="situationResults"></div>
+    </section>
+
+    <section id="rulesSection" class="card hidden">
+      <div class="section-head">
+        <div><p class="eyebrow">SUB III</p><h2>Regulament server</h2></div>
+        <span class="points">35P</span>
+      </div>
+      <div id="rulesResults"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Pagina evaluatorului conține baremul. Nu o trimite candidaților.</p>
+  </footer>
+
+  <script src="evaluator.js"></script>
+</body>
+</html>
